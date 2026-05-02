@@ -5,7 +5,7 @@ def factorial(num):
         return num * factorial(num-1)
     
 
-fact = int(input("enter the number : "))
+fact = int(input("enter a number : "))
 
 output = factorial(fact)
 print(f"Factorial of {fact} is {output}")
