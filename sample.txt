@@ -1,0 +1,4 @@
+This is a sample text file.
+It contains multiple lines.
+The environment is good.
+This is the end of line.
