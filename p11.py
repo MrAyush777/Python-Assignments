@@ -29,6 +29,9 @@ def fetch_data():
         
     cursor = conn.cursor()
     cursor.execute(''' select * from employee; ''')
+    
+    # select with where clause
+    cursor.execute(''' select * from employee where Eage < 30; ''')
 
     print(cursor.fetchall())
 
@@ -53,9 +56,23 @@ def input_data():
     conn.commit()
     conn.close()
     
+def truncTable():
+    
+    conn = ps.connect(host="localhost", dbname="postgres", port=5432, user="postgres", password = "Ayush@777")
+                
+    cursor = conn.cursor()
+
+    query = ''' truncate table employee; '''
+    cursor.execute(query)
+
+    print("Table truncated succefully...")
+    
+    conn.commit()
+    conn.close()
 
 
 table()
 insert_data()
 fetch_data()
 input_data()
+truncTable()
